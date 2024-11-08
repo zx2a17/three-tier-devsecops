@@ -1,7 +1,6 @@
 # Three-Tier Full-Stack Web Application Deployment on AWS EKS with ArgoCD, Prometheus, Grafana, and Jenkins
 [![LinkedIn](https://img.shields.io/badge/Connect%20with%20me%20on-LinkedIn-blue.svg)](https://www.linkedin.com/in/muhammad-rashid-daha/)
-[![Youtube](https://img.shields.io/youtube/channel/subscribers/:channelId
-)](https://youtube.com/@codewithmuh)
+[![Youtube](https://img.shields.io/youtube/channel/subscribers/:channelId)](https://youtube.com/@codewithmuh)
 [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@codewithmuh)
 [![GitHub](https://img.shields.io/github/stars/codewithmuh.svg?style=social)](https://github.com/codewithmuh)
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%9C%A8-lightgrey)](https://www.terraform.io)
