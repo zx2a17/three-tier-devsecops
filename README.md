@@ -3,7 +3,7 @@
 [![Youtube](https://img.shields.io/youtube/channel/subscribers/:channelId
 )](https://youtube.com/@codewithmuh)
 [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@codewithmuh)
-[![GitHub](https://img.shields.io/github/stars/AmanPathak-DevOps.svg?style=social)](https://github.com/codewithmuh)
+[![GitHub](https://img.shields.io/github/stars/codewithmuh.svg?style=social)](https://github.com/codewithmuh)
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%9C%A8-lightgrey)](https://www.terraform.io)
 [![AWS](https://img.shields.io/badge/AWS-%F0%9F%9B%A1-orange)](https://aws.amazon.com)
 
