@@ -29,6 +29,6 @@ spec:
         imagePullPolicy: Always
         env:
           - name: REACT_APP_BACKEND_URL
-            value: "https://app.dovz.shop/api/tasks"
+            value: "http://api.dovz.shop/api/tasks"
         ports:
         - containerPort: 3000
