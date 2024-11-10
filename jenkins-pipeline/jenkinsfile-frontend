@@ -95,7 +95,7 @@ pipeline {
                 GIT_USER_NAME = "codewithmuh"
             }
             steps {
-                dir('kubernetes-manifests/Frontend') {
+                dir('kubernetes-manifests/frontend') {
                     withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                         sh '''
                             git config user.email "rashiddaha80@gmail.com"
