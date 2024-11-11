@@ -7,7 +7,10 @@ const app = express();
 connection();
 
 app.use(express.json());
-app.use(cors());
+const allowedOrigins = ['http://www.dovz.shop', 'https://www.dovz.shop'];
+app.use(cors({
+  origin: allowedOrigins
+}));
 
 app.get('/ok', (req, res) => {
     res.status(200).send('ok')
