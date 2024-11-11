@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: mainlb
+  name: frontend-ingress
   namespace: three-tier
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -10,21 +10,13 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: api.dovz.shop
+    - host: www.dovz.shop
       http:
         paths:
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: api
-                port:   
-                  number: 3500
           - path: /
             pathType: Prefix
             backend:
               service:
                 name: frontend
-                port: 
+                port:
                   number: 3000
-      
