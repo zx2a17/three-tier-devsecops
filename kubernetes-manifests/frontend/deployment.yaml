@@ -25,10 +25,10 @@ spec:
       - name: ecr-registry-secret
       containers:
       - name: frontend
-        image: 167365792572.dkr.ecr.us-west-2.amazonaws.com/frontend:20
+        image: 167365792572.dkr.ecr.us-west-2.amazonaws.com/frontend:latest
         imagePullPolicy: Always
         env:
           - name: REACT_APP_BACKEND_URL
-            value: "http://api.dovz.shop/api/tasks"
+            value: "http://api.dovz.shop/api/notes/"
         ports:
         - containerPort: 3000

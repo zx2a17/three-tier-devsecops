@@ -2,45 +2,39 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   namespace: three-tier
-  name: mongodb
+  name: postgres
 spec: 
   replicas: 1
   selector:
     matchLabels:
-      app: mongodb
+      app: postgres
   template:
     metadata:
       labels: 
-        app: mongodb
+        app: postgres
     spec: 
       containers:
-      - name: mon
-        image: mongo:4.4.6
-        command:
-            - "numactl"
-            - "--interleave=all"
-            - "mongod"
-            - "--wiredTigerCacheSizeGB"
-            - "0.1"
-            - "--bind_ip"
-            - "0.0.0.0"
+      - name: postgres
+        image: postgres:13
         ports:
-        - containerPort: 27017
+        - containerPort: 5432
         env: 
-          - name: MONGO_INITDB_ROOT_USERNAME
+          - name: POSTGRES_USER
             valueFrom:
               secretKeyRef:
-                name: mongo-sec
+                name: postgres-sec
                 key: username
-          - name: MONGO_INITDB_ROOT_PASSWORD
+          - name: POSTGRES_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: mongo-sec
+                name: postgres-sec
                 key: password
+          - name: POSTGRES_DB
+            value: mydatabase # Name of the database to initialize
         volumeMounts:
-          - name: mongo-volume
-            mountPath: /data/db
+          - name: postgres-volume
+            mountPath: /var/lib/postgresql/data
       volumes: 
-      - name: mongo-volume
+      - name: postgres-volume
         persistentVolumeClaim:
-          claimName: mongo-volume-claim
+          claimName: postgres-volume-claim
