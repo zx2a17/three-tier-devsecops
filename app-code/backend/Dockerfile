@@ -1,22 +1,34 @@
-# backend/Dockerfile
 FROM python:3.12-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Set work directory
-WORKDIR /app
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        supervisor && \
+    rm -rf /var/lib/apt/lists/*
 
-# Install dependencies
-COPY requirements.txt /app/
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./requirements /home/devops-backend/requirements
+RUN mkdir -p /home/devops-backend/media
+WORKDIR /home/devops-backend
 
-# Copy project files
-COPY . /app/
 
-# Expose the port Django runs on
+RUN pip install --upgrade pip
+RUN pip install -r ./requirements/requirements.txt
+
+
+
 EXPOSE 8000
 
-# Run Django development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+RUN mkdir -p /var/logs/devops
+
+COPY ./scripts /home/docker/scripts
+
+RUN sed -i 's/\r$//' /home/docker/scripts/boot.sh  && \
+        chmod +x /home/docker/scripts/boot.sh
+
+
+
+COPY ./ /home/devops-backend
+ENTRYPOINT /home/docker/scripts/boot.sh
