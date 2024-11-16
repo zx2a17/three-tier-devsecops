@@ -12,12 +12,12 @@ const Notes = () => {
     }, []);
 
     const fetchNotes = async () => {
-        const response = await axios.get('http://localhost:8000/api/notes/');
+        const response = await axios.get('https://api.dovz.shop/api/notes/');
         setNotes(response.data);
     };
 
     const addNote = async () => {
-        const response = await axios.post('http://localhost:8000/api/notes/', { title, content });
+        const response = await axios.post('https://api.dovz.shop/api/notes/', { title, content });
         setNotes([...notes, response.data]);
         setTitle('');
         setContent('');
