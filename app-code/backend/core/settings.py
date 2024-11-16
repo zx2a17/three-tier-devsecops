@@ -85,16 +85,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # }
 
 
-import os
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'mydatabase'),
-        'USER': os.getenv('POSTGRES_USER', 'admin'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'password123'),
-        'HOST': os.getenv('POSTGRES_HOST', 'postgres-svc.three-tier.svc.cluster.local'),
-        'PORT': '5432',
+        'NAME': os.getenv('POSTGRES_DB', 'mydatabase'),  # Match your `POSTGRES_DB`
+        'USER': os.getenv('POSTGRES_USER', 'admin'),      # Match your `POSTGRES_USER`
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'sdfvsnfsfsss243'),  # Match your `POSTGRES_PASSWORD`
+        'HOST': os.getenv('POSTGRES_HOST', 'postgres-svc.three-tier.svc.cluster.local'),  # Match your Kubernetes service DNS
+        'PORT': '5432',  # Default PostgreSQL port
     }
 }
 
