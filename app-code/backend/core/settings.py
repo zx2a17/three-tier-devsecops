@@ -88,16 +88,18 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # }
 
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('POSTGRES_DB'),
-        'USER': config('POSTGRES_USERNAME'),
-        'PASSWORD': config('POSTGRES_PASSWORD'),
-        'HOST': 'postgres-svc',
-        'PORT': config('POSTGRES_PORT'),
+        'NAME': os.environ.get('POSTGRES_DB'),
+        'USER': os.environ.get('POSTGRES_USERNAME'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': 'postgres-svc',  # Kubernetes service name of the Postgres database
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
