@@ -9,3 +9,4 @@ venv
 /jenkins-server-terraform/.terraform
 
 notes.txt
+.pem
