@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
+from decouple import config
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -85,19 +88,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # }
 
 
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'mydatabase'),  # Match your `POSTGRES_DB`
-        'USER': os.getenv('POSTGRES_USER', 'admin'),      # Match your `POSTGRES_USER`
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'sdfvsnfsfsss243'),  # Match your `POSTGRES_PASSWORD`
-        'HOST': os.getenv('POSTGRES_HOST', 'postgres-svc.three-tier.svc.cluster.local'),  # Match your Kubernetes service DNS
-        'PORT': '5432',  # Default PostgreSQL port
+        'NAME': config('POSTGRES_DB'),
+        'USER': config('POSTGRES_USERNAME'),
+        'PASSWORD': config('POSTGRES_PASSWORD'),
+        'HOST': config('POSTGRES_HOST'),
+        'PORT': config('POSTGRES_PORT'),
     }
 }
-
 
 
 # Password validation
@@ -134,7 +134,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Collects all static files here
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

@@ -144,3 +144,4 @@ wsproto==1.2.0
 zipp==3.21.0
 zope.interface==6.2
 psycopg2-binary==2.9.9
+python-decouple==3.8

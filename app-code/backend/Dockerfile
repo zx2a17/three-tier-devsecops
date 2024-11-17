@@ -25,6 +25,7 @@ RUN mkdir -p /var/logs/devops
 
 COPY ./scripts /home/docker/scripts
 
+
 RUN sed -i 's/\r$//' /home/docker/scripts/boot.sh  && \
         chmod +x /home/docker/scripts/boot.sh
 
