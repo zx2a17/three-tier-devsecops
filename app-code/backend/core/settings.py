@@ -94,7 +94,7 @@ DATABASES = {
         'NAME': config('POSTGRES_DB'),
         'USER': config('POSTGRES_USERNAME'),
         'PASSWORD': config('POSTGRES_PASSWORD'),
-        'HOST': config('POSTGRES_HOST'),
+        'HOST': 'postgres-svc',
         'PORT': config('POSTGRES_PORT'),
     }
 }
