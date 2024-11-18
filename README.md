@@ -6,3 +6,5 @@
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%9C%A8-lightgrey)](https://www.terraform.io)
 [![AWS](https://img.shields.io/badge/AWS-%F0%9F%9B%A1-orange)](https://aws.amazon.com)
 
+
+### Youtube Video Url: https://youtu.be/UNF5JdUEfh8
