@@ -8,6 +8,7 @@
 
 
 ### Youtube Video Url: https://youtu.be/UNF5JdUEfh8
+### Linkedin Article: https://www.linkedin.com/pulse/deploying-three-tier-devsecops-web-application-aws-eks-rashid-x7f9f/?trackingId=lugcl9NYRcG1mAWRStB9Tg%3D%3D
 
 Learn how to deploy a complete three-tier DevSecOps project on AWS EKS! This step-by-step guide covers setting up Kubernetes clusters, implementing CI/CD with Jenkins, managing GitOps with ArgoCD, and monitoring with Prometheus and Grafana. Perfect for mastering secure and scalable application deployment.
 ![1i (6)](https://github.com/user-attachments/assets/f69e8abc-c703-4604-bb14-f3876ddc08f8)
