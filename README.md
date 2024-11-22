@@ -16,7 +16,7 @@ Learn how to deploy a complete three-tier DevSecOps project on AWS EKS! This ste
 
 This Repo is your blueprint for leveraging AWS services like ECR, S3, DynamoDB, and EC2, with Terraform as the backbone for Infrastructure as Code (IaC). From setting up an IAM user with proper permissions to configuring pipelines for building, scanning, and deploying frontend and backend applications, you'll discover how to create a production-grade system designed for scalability and security.
 
-#####Highlights include:
+#### Highlights include:
 
 **Pipeline Automation:** Build, scan, and deploy Docker images using Jenkins, Trivy, and SonarQube.
 **Cluster Monitoring:** Install Prometheus and Grafana to monitor application health with visual dashboards.
