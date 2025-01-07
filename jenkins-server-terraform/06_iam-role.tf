@@ -34,7 +34,10 @@ resource "aws_iam_policy" "ecr_access_policy" {
         "ecr:InitiateLayerUpload",
         "ecr:UploadLayerPart",
         "ecr:CompleteLayerUpload",
-        "ecr:PutImage"
+        "ecr:PutImage",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeInstanceTypeOfferings",
+        "cloudformation:*"
       ],
       "Resource": "*"
     }
